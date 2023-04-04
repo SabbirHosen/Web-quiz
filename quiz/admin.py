@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Question, Choice
+from .models import Question, Choice, QuizProfile, AttemptedQuestion
 from .forms import QuestionForm, ChoiceForm, ChoiceInlineFormset
 
 
@@ -26,7 +26,7 @@ class QuestionAdmin(admin.ModelAdmin):
     form = QuestionForm
 
     def has_delete_permission(self, request, obj=None):
-        return False
+        return True
 
     def has_change_permission(self, request, obj=None):
         if obj is not None and obj.pk is not None and obj.is_published is True:
@@ -35,3 +35,5 @@ class QuestionAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Question, QuestionAdmin)
+# admin.site.register(QuizProfile)
+# admin.site.register(AttemptedQuestion)
