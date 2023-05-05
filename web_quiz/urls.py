@@ -20,9 +20,9 @@ from django.conf.urls import handler404, handler500
 from django.conf import settings
 from django.conf.urls.static import static
 
-admin.site.site_header = "Quiz App"
-admin.site.site_title = "Quiz App Administration"
-admin.site.index_title = "Quiz App Admin panel"
+admin.site.site_header = "Quiz Maker"
+admin.site.site_title = "Quiz Maker Administration"
+admin.site.index_title = "Quiz Maker Admin panel"
 
 handler404 = "quiz.views.error_404"
 handler500 = "quiz.views.error_500"
